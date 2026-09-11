@@ -1,4 +1,4 @@
-﻿[app]
+[app]
 title = Matdoush
 package.name = matdoush
 package.domain = org.matdoush
