@@ -2,6 +2,7 @@
 title = Matdoush
 package.name = matdoush
 package.domain = org.matdoush
+version = 0.1
 source.dir = .
 source.include_exts = py,png,jpg,jpeg,kv,atlas
 requirements = python3,kivy
