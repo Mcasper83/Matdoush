@@ -1,4 +1,16 @@
-name: Build Android APK
+- name: Configure Android environment
+  run: |
+    echo "ANDROIDSDK=$ANDROID_HOME" >> "$GITHUB_ENV"
+    echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+    echo "ANDROIDAPI=33" >> "$GITHUB_ENV"
+    echo "ANDROIDMINAPI=24" >> "$GITHUB_ENV"
+
+    mkdir -p "$ANDROID_HOME/tools/bin"
+    ln -sf "$(which sdkmanager)" "$ANDROID_HOME/tools/bin/sdkmanager"
+
+    rm -rf "$HOME/.buildozer/android/platform/android-sdk"
+    mkdir -p "$HOME/.buildozer/android/platform"
+    ln -s "$ANDROID_HOME" "$HOME/.buildozer/android/platform/android-sdk"
 
 on:
   workflow_dispatch:
